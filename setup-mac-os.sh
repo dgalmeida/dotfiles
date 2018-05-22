@@ -53,8 +53,8 @@ pyenv install 3.6.5 -s
 pyenv global 2.7.11
 eval "$(pyenv init -)"
 
-brew install pipenv
-brew install jupyter
+brew install pipenv jupyter socat coreutils
+brew install pylint virtualenv virtualenvwrapper
 brew cleanup
 
 #########################################
