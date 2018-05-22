@@ -93,8 +93,6 @@ nvm use --lts
 echo "Installing zsh"
 brew install zsh zsh-completions zsh-syntax-highlighting
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-echo "Setting ZSH as shell..."
 brew cleanup
 
 #########################################
@@ -133,7 +131,7 @@ brew cask cleanup
 brew cleanup
 
 echo 'Set szh as shell...'
-chsh -s /bin/zsh
+chsh -s $(which zsh)
 
 
 #========================
