@@ -134,9 +134,9 @@ echo 'Set szh as shell...'
 chsh -s $(which zsh)
 
 
-#========================
+#########################################
 # MACOS SETTINGS
-#========================
+#########################################
 echo "Setting Mac settings..."
 
 # dock orientation
