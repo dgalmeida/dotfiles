@@ -1,0 +1,39 @@
+[user]
+    name = Diego Almeida
+    email = dgralmeida@gmail.com
+    github = bradp
+
+[core]
+    preloadindex = true
+
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+    ui = auto
+    editor = vim
+    exludesfile = ~/.global_ignore
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[alias]
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    gg = log --oneline --abbrev-commit --all --graph --decorate --color
+
+[diff]
+    tool = pycharm
+
+[difftool "pycharm"]
+    cmd = /usr/local/bin/charm diff "$LOCAL" "$REMOTE" && echo "Press enter to continue on pycharm..." && read
+
+[merge]
+    tool = pycharm
+    keepBackup = true
+
+[mergetool "pycharm"]
+    cmd = /usr/local/bin/charm merge "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
