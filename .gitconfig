@@ -29,11 +29,11 @@
     tool = pycharm
 
 [difftool "pycharm"]
-    cmd = /usr/local/bin/charm diff "$LOCAL" "$REMOTE" && echo "Press enter to continue on pycharm..." && read
+    cmd = charm diff "$LOCAL" "$REMOTE" && echo "Press enter to continue on pycharm..." && read
 
 [merge]
-    tool = pycharm
+    tool = charm
     keepBackup = true
 
 [mergetool "pycharm"]
-    cmd = /usr/local/bin/charm merge "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
+    cmd = charm merge "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
