@@ -96,15 +96,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 brew cleanup
 
 #########################################
-# JKDs
-#########################################
-brew cask install java
-brew cask install java8
-
-brew cleanup
-java -version
-
-#########################################
 # INSTALL MAC APPS
 #########################################
 #  apps=(
@@ -121,9 +112,15 @@ apps=(
     franz
     macdown
     docker
+    brew-cask-completion
+    font-hack-nerd-font
+    java
+    java8
 )
-brew tap caskroom/versions
+
 brew tap caskroom/cask
+brew tap caskroom/versions
+brew tap caskroom/fonts
 
 echo "installing apps with Cask..."
 brew cask install ${apps[@]}

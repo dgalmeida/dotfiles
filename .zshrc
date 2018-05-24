@@ -1,10 +1,7 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
-#ZSH_HOME=/dotfiles/.oh-my-zsh
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel9k/powerlevel9k"
 DISABLE_AUTO_UPDATE="true"
+COMPLETION_WAITING_DOTS="true"
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
 ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR="/usr/local/share/zsh-syntax-highlighting/highlighters"
@@ -17,7 +14,7 @@ setopt INTERACTIVE_COMMENTS
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 plugins=(
-  brew
+	brew
 	brew-cask
 	git
 	git-extras
@@ -25,7 +22,24 @@ plugins=(
 	zsh-syntax-highlighting
 )
 
-source $ZSH/oh-my-zsh.sh
+
+PATH=${PATH}:/usr/local/opt/coreutils/libexec/gnubin
+PATH=${PATH}:/usr/local/opt/coreutils/libexec/gnuman
+PATH=${PATH}:/usr/local/opt/openssl/bin
+PATH=${PATH}:/usr/local/opt/sqlite/bin
+PATH=${PATH}:$(pyenv root)/shims
+PATH=${PATH}:/usr/local/bin
+PATH=${PATH}:/usr/bin
+PATH=${PATH}:/bin
+PATH=${PATH}:/usr/sbin
+PATH=${PATH}:/sbin
+PATH=${PATH}:/usr/local/git/bin
+PATH=${PATH}:/usr/local/bin/charm
+PATH=${PATH}:/usr/local/sbin
+PATH=${PATH}:"$HOME"/.yarn/bin
+
+export PATH=${PATH}
+
 for file in $HOME/dotfiles/env/*; do
    source "$file"
 done
@@ -35,19 +49,10 @@ if (( $+commands[tag] )); then
 	alias ag=tag
 fi
 
-PATH=${PATH}:/usr/local/opt/openssl/bin
-PATH=${PATH}:/usr/local/opt/sqlite/bin
-PATH=${PATH}:/usr/local/bin
-PATH=${PATH}:/usr/bin
-PATH=${PATH}:/bin
-PATH=${PATH}:/usr/sbin
-PATH=${PATH}:/sbin
-PATH=${PATH}:/usr/local/git/bin
-PATH=${PATH}:/usr/local/bin/charm
-PATH=${PATH}:"$HOME"/.yarn/bin
-PATH=${PATH}:/usr/local/sbin
-
-export PATH=${PATH}
+#source  /Users/dgralmeida/.oh-my-zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme
+source "$GOOGLE_CLOUD_SKD_ROOT"/path.zsh.inc
+source "$GOOGLE_CLOUD_SKD_ROOT"/completion.zsh.inc
+source /usr/local/bin/virtualenvwrapper.sh
 
 # User configuration
 

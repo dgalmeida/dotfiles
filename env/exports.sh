@@ -3,6 +3,7 @@
 #########################################
 
 export PROJECT_HOME=$HOME/Projects
+export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 #########################################
 # History
@@ -48,11 +49,12 @@ export WORKON_HOME=$HOME/.virtualenvs
 . /usr/local/bin/virtualenvwrapper.sh
 
 #google sdk home | appengine core packages | appengine dev libs
-PYTHONPATH=${PYTHONPATH}:/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk
-PYTHONPATH=${PYTHONPATH}:/platform/google_appengine
-PYTHONPATH=${PYTHONPATH}:/platform/google_appengine/google/appengine/lib
-PYTHONPATH=${PYTHONPATH}:/platform/google_appengine/google/appengine/google
-PYTHONPATH=${PYTHONPATH}:/google/appengine
+GOOGLE_CLOUD_SKD_ROOT=/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk
+PYTHONPATH=${PYTHONPATH}:${GOOGLE_CLOUD_SKD_ROOT}
+PYTHONPATH=${PYTHONPATH}:${GOOGLE_CLOUD_SKD_ROOT}/platform/google_appengine
+PYTHONPATH=${PYTHONPATH}:${GOOGLE_CLOUD_SKD_ROOT}/platform/google_appengine/google/appengine/lib
+PYTHONPATH=${PYTHONPATH}:${GOOGLE_CLOUD_SKD_ROOT}/platform/google_appengine/google/appengine/google
+PYTHONPATH=${PYTHONPATH}:${GOOGLE_CLOUD_SKD_ROOT}/google/appengine
 export PYTHONPATH=${PYTHONPATH}
 
 #########################################
@@ -62,7 +64,7 @@ export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
 # @ODO
-# FIX THIRD LAPTOP
+# FIX gLAPTOP
 
 # sudo chown -R $(whoami) /usr/local/etc /usr/local/sbin /usr/local/share /usr/local/share/doc (before install brew)
 # install python from brew
