@@ -44,7 +44,6 @@ export PYENV_ROOT_SHIMS="$(pyenv root)/shims"
 export PYENV_ROOT=$HOME/.pyenv
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PYENV_VERSION="2.7.11"
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
 export WORKON_HOME=$HOME/.virtualenvs
 
 #google sdk home | appengine core packages | appengine dev libs
