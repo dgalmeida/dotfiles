@@ -46,6 +46,9 @@ done
 source "$ZSH"/oh-my-zsh.sh
 source "$GOOGLE_CLOUD_SKD_ROOT"/path.zsh.inc
 source "$GOOGLE_CLOUD_SKD_ROOT"/completion.zsh.inc
-source "$PYENV_ROOT"/completions/pyenv.zsh
+source "$HOME"/.pyenv/completions/pyenv.zsh
 source "$HOME"/dotfiles/configs/.powerlevel9k
 source /usr/local/bin/virtualenvwrapper.sh
+
+#init pyenv
+eval "$(pyenv init -)"
