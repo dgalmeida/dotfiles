@@ -7,7 +7,7 @@
 1. **configs**: external config files
     * [**.gitconfig**](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration): start preferences to git
     * [**.global_ignore**](https://git-scm.com/docs/gitignore): file to ignore globally some files
-    * **.powerline**: adjusts to [powerline9k](https://github.com/bhilburn/powerlevel9k)
+    * **.powerlevel9k**: adjusts to [powerline9k](https://github.com/bhilburn/powerlevel9k)
     * [**.zshrc**](http://www.zsh.org/): settings to zsh
 2. **scripts**: helper scripts
     * **setup-mac-os.sh** script to init macOS setup and install main tools, apps and packages dependencies.
