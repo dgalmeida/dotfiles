@@ -6,7 +6,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
 ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR="/usr/local/share/zsh-syntax-highlighting/highlighters"
 ZSH_DISABLE_COMPFIX="true"
-
+HOMEBREW_NO_AUTO_UPDATE=1
 unsetopt nomatch
 setopt APPEND_HISTORY
 setopt INTERACTIVE_COMMENTS
@@ -22,8 +22,7 @@ plugins=(
 	zsh-syntax-highlighting
 )
 
-PATH=${PATH}:/usr/local/opt/coreutils/libexec/gnubin
-PATH=${PATH}:/usr/local/opt/coreutils/libexec/gnuman
+PATH=${PATH}:/usr/local/opt/go/libexec/bin
 PATH=${PATH}:/usr/local/opt/openssl/bin
 PATH=${PATH}:/usr/local/opt/sqlite/bin
 PATH=${PATH}:$(pyenv root)/shims
