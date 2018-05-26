@@ -46,7 +46,6 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 export PYENV_VERSION="2.7.11"
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
 export WORKON_HOME=$HOME/.virtualenvs
-. /usr/local/bin/virtualenvwrapper.sh
 
 #google sdk home | appengine core packages | appengine dev libs
 GOOGLE_CLOUD_SKD_ROOT=/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk
