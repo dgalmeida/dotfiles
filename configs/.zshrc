@@ -55,7 +55,6 @@ source /usr/local/bin/virtualenvwrapper.sh
 initjenv() {eval "$(jenv init -)" }
 initpyenv() {eval "$(pyenv init -)"}
 workat() { workon "$1"; initpyenv}
-reqf() {cd $HOME/Projects/cit/google/google-requisition-form; workat reqfenv}
 initpyenv
 initjenv
 
