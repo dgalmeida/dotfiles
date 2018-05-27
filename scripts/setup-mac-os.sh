@@ -48,13 +48,15 @@ brew install tree wget trash the_silver_searcher
 #########################################
 
 brew install pyenv
+eval "$(pyenv init -)"
 pyenv install 2.7.11 -s
 pyenv install 3.6.5 -s
-pyenv global 2.7.11
-eval "$(pyenv init -)"
+pyenv global 3.6.5
 
-brew install pipenv jupyter socat coreutils
+
+brew install pipenv jupyter socat coreutils jenv
 brew install pylint virtualenv virtualenvwrapper
+eval "$(jenv init -)"
 brew cleanup
 
 #########################################
@@ -98,13 +100,7 @@ brew cleanup
 #########################################
 # INSTALL MAC APPS
 #########################################
-#  apps=(
-#    google-chrome
-#    visual-studio-code
-#    franz
-#    macdown
-#    docker
-# )
+
 apps=(
     google-chrome
     visual-studio-code

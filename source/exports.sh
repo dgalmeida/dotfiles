@@ -43,7 +43,6 @@ setopt RM_STAR_WAIT
 export PYENV_ROOT=$HOME/.pyenv
 export PYENV_ROOT_SHIMS="$(pyenv root)/shims"
 export PATH="$PYENV_ROOT/bin:$PATH"
-export PYENV_VERSION="2.7.11"
 export WORKON_HOME=$HOME/.virtualenvs
 
 #google sdk home | appengine core packages | appengine dev libs
@@ -59,7 +58,7 @@ export PYTHONPATH=${PYTHONPATH}
 # Node nvm_dir
 #########################################
 export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+. "$(brew --prefix nvm)/nvm.sh"
 
 # @ODO
 # FIX gLAPTOP

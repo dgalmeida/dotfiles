@@ -1,6 +1,5 @@
 # Path to your oh-my-zsh installation
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="powerlevel9k/powerlevel9k"
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
@@ -23,6 +22,7 @@ plugins=(
 	zsh-syntax-highlighting
 )
 
+PATH=${PATH}:/.jenv/bin
 PATH=${PATH}:/usr/local/opt/go/libexec/bin
 PATH=${PATH}:/usr/local/opt/openssl/bin
 PATH=${PATH}:/usr/local/opt/sqlite/bin
@@ -43,12 +43,18 @@ for file in $HOME/dotfiles/source/*; do
    source "$file"
 done
 
+ZSH_THEME="powerlevel9k/powerlevel9k"
+source "$HOME"/dotfiles/configs/.powerlevel9k
 source "$ZSH"/oh-my-zsh.sh
 source "$GOOGLE_CLOUD_SKD_ROOT"/path.zsh.inc
 source "$GOOGLE_CLOUD_SKD_ROOT"/completion.zsh.inc
 source "$HOME"/.pyenv/completions/pyenv.zsh
-source "$HOME"/dotfiles/configs/.powerlevel9k
 source /usr/local/bin/virtualenvwrapper.sh
 
-#init pyenv
-eval "$(pyenv init -)"
+
+
+#pyenv precedence
+# The shell Python specified by the PYENV_VERSION environment variable.
+# The local Python specified by the .python-version file in the current directory or the parent directories of the current directory.
+# The global Python specified by the version file under the pyenv root.
+# The system Python.
