@@ -51,7 +51,27 @@ source "$GOOGLE_CLOUD_SKD_ROOT"/completion.zsh.inc
 source "$HOME"/.pyenv/completions/pyenv.zsh
 source /usr/local/bin/virtualenvwrapper.sh
 
+#init pyenv
+initjenv() {eval "$(jenv init -)" }
+initpyenv() {eval "$(pyenv init -)"}
+workat() { workon "$1"; initpyenv}
+reqf() {cd $HOME/Projects/cit/google/google-requisition-form; workat reqfenv}
+initpyenv
+initjenv
 
+#custom prompt to powerlevel9k
+prompt_pyenv() {
+  local pyenv_version_local="$(pyenv version | cut -d" " -f1)"
+  local virtualenv_path="$VIRTUAL_ENV"
+
+  if [[ -n ${pyenv_version_local} && -n "$virtualenv_path" && "$VIRTUAL_ENV_DISABLE_PROMPT" != true  ]]; then
+    "$1_prompt_segment" "$0" "$2" "blue" "$DEFAULT_COLOR"  "${pyenv_version_local}"
+  else
+    if [[ -n ${pyenv_version_local} ]]; then
+      "$1_prompt_segment" "$0" "$2" "blue" "$DEFAULT_COLOR"  "${pyenv_version_local}" 'PYTHON_ICON'
+    fi
+  fi
+}
 
 #pyenv precedence
 # The shell Python specified by the PYENV_VERSION environment variable.
