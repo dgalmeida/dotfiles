@@ -20,3 +20,4 @@
     [ ] script to automate sym links to original files
     [ ] include alias and function files
     [ ] mix with some dotenv managment tool
+    [ ] auto add java versions with jenv
