@@ -41,7 +41,8 @@ brew install git-extras git-flow legit
 #########################################
 
 echo "Installing cli tools stuff..."
-brew install tree wget trash the_silver_searcher
+brew install tree wget trash
+brew install tmux the_silver_searcher
 
 #########################################
 # PYTHON
