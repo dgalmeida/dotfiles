@@ -60,7 +60,7 @@ initjenv
 
 #custom prompt to powerlevel9k
 prompt_pyenv() {
-  local pyenv_version_local="$(pyenv version | cut -d" " -f1)"
+  local pyenv_version_local="$(pyenv version | cut -d' ' -f1)"
   local virtualenv_path="$VIRTUAL_ENV"
 
   if [[ -n ${pyenv_version_local} && -n "$virtualenv_path" && "$VIRTUAL_ENV_DISABLE_PROMPT" != true  ]]; then
@@ -70,6 +70,10 @@ prompt_pyenv() {
       "$1_prompt_segment" "$0" "$2" "blue" "$DEFAULT_COLOR"  "${pyenv_version_local}" 'PYTHON_ICON'
     fi
   fi
+}
+
+gituser() {
+  git config --global user.email $1
 }
 
 #pyenv precedence
